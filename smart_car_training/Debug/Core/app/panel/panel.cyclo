@@ -1,0 +1,9 @@
+../Core/app/panel/panel.c:18:14:Panel_DrawStandby	1
+../Core/app/panel/panel.c:27:14:Panel_DrawLineFollow	1
+../Core/app/panel/panel.c:35:14:Panel_DrawGrayCalib	3
+../Core/app/panel/panel.c:53:14:Panel_DrawLineColor	3
+../Core/app/panel/panel.c:69:14:Panel_DrawSpeed	2
+../Core/app/panel/panel.c:84:14:Panel_EnterMenu	5
+../Core/app/panel/panel.c:108:14:Panel_ExitMenu	1
+../Core/app/panel/panel.c:114:7:Panel_Init	5
+../Core/app/panel/panel.c:137:7:Panel_Task	19

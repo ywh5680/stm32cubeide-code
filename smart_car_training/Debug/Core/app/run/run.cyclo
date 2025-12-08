@@ -1,0 +1,4 @@
+../Core/app/run/run.c:8:16:run_clamp_speed	3
+../Core/app/run/run.c:21:6:Run_Init	1
+../Core/app/run/run.c:26:6:Run_SetBaseSpeed	1
+../Core/app/run/run.c:31:6:Run_LineFollowStep	4

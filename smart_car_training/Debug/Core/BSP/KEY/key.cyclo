@@ -1,0 +1,4 @@
+../Core/BSP/KEY/key.c:8:6:KEY_Init	1
+../Core/BSP/KEY/key.c:36:9:KEY1_Read	1
+../Core/BSP/KEY/key.c:46:9:KEY2_Read	1
+../Core/BSP/KEY/key.c:56:11:KEY_Scan	9

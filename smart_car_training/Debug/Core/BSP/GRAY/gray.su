@@ -1,0 +1,4 @@
+../Core/BSP/GRAY/gray.c:8:6:GRAY_Init	32	static
+../Core/BSP/GRAY/gray.c:37:9:GRAY_Read	24	static
+../Core/BSP/GRAY/gray.c:79:6:GRAY_ReadAll	24	static
+../Core/BSP/GRAY/gray.c:97:9:GRAY_ReadByte	16	static

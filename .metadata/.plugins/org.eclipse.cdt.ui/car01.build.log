@@ -1,0 +1,143 @@
+16:59:51 **** Incremental Build of configuration Debug for project car01 ****
+make -j16 all 
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/GRAY" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/KEY" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/LED" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/M" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/MPU" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/OLED" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/GRAY" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/KEY" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/LED" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/M" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/MPU" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/OLED" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/GRAY" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/KEY" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/LED" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/M" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/MPU" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/OLED" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/GRAY" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/KEY" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/LED" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/M" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/MPU" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/OLED" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/GRAY" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/KEY" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/LED" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/M" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/MPU" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/OLED" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/GRAY" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/KEY" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/LED" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/M" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/MPU" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/OLED" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/GRAY" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/KEY" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/LED" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/M" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/MPU" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/OLED" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/GRAY" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/KEY" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/LED" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/M" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/MPU" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/OLED" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/GRAY" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/KEY" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/LED" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/M" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/MPU" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/OLED" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/GRAY" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/KEY" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/LED" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/M" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/MPU" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/OLED" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/GRAY" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/KEY" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/LED" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/M" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/MPU" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/OLED" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Core/drivers/OLED/oled.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/GRAY" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/KEY" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/LED" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/M" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/MPU" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/OLED" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/drivers/OLED/oled.d" -MT"Core/drivers/OLED/oled.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/drivers/OLED/oled.o"
+arm-none-eabi-gcc "../Core/drivers/MPU/inv_mpu.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/GRAY" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/KEY" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/LED" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/M" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/MPU" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/OLED" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/drivers/MPU/inv_mpu.d" -MT"Core/drivers/MPU/inv_mpu.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/drivers/MPU/inv_mpu.o"
+arm-none-eabi-gcc "../Core/drivers/MPU/inv_mpu_dmp_motion_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/GRAY" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/KEY" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/LED" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/M" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/MPU" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/OLED" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/drivers/MPU/inv_mpu_dmp_motion_driver.d" -MT"Core/drivers/MPU/inv_mpu_dmp_motion_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/drivers/MPU/inv_mpu_dmp_motion_driver.o"
+arm-none-eabi-gcc "../Core/drivers/MPU/mpu6050.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/GRAY" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/KEY" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/LED" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/M" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/MPU" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/OLED" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/drivers/MPU/mpu6050.d" -MT"Core/drivers/MPU/mpu6050.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/drivers/MPU/mpu6050.o"
+arm-none-eabi-gcc "../Core/drivers/LED/led.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/GRAY" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/KEY" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/LED" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/M" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/MPU" -I"/home/h/STM32CubeIDE/workspace_1.19.0/car01/Core/drivers/OLED" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/drivers/LED/led.d" -MT"Core/drivers/LED/led.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/drivers/LED/led.o"
+In file included from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c:82:
+../Core/Inc/stm32f1xx_hal_conf.h:302:10: fatal error: stm32f1xx_hal_i2c.h: No such file or directory
+  302 | #include "stm32f1xx_hal_i2c.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c:83:
+../Core/Inc/stm32f1xx_hal_conf.h:302:10: fatal error: stm32f1xx_hal_i2c.h: No such file or directory
+  302 | #include "stm32f1xx_hal_i2c.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c:41:
+../Core/Inc/stm32f1xx_hal_conf.h:302:10: fatal error: stm32f1xx_hal_i2c.h: No such file or directory
+  302 | #include "stm32f1xx_hal_i2c.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c:61:
+../Core/Inc/stm32f1xx_hal_conf.h:302:10: fatal error: stm32f1xx_hal_i2c.h: No such file or directory
+  302 | #include "stm32f1xx_hal_i2c.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c:40:
+../Core/Inc/stm32f1xx_hal_conf.h:302:10: fatal error: stm32f1xx_hal_i2c.h: No such file or directory
+  302 | #include "stm32f1xx_hal_i2c.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c:86:
+../Core/Inc/stm32f1xx_hal_conf.h:302:10: fatal error: stm32f1xx_hal_i2c.h: No such file or directory
+  302 | #include "stm32f1xx_hal_i2c.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/drivers/LED/led.h:4,
+                 from ../Core/drivers/LED/led.c:1:
+../Core/Inc/stm32f1xx_hal_conf.h:302:10: fatal error: stm32f1xx_hal_i2c.h: No such file or directory
+  302 | #include "stm32f1xx_hal_i2c.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c:105:
+../Core/Inc/stm32f1xx_hal_conf.h:302:10: fatal error: stm32f1xx_hal_i2c.h: No such file or directory
+  302 | #include "stm32f1xx_hal_i2c.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Drivers/STM32F1xx_HAL_Driver/Src/subdir.mk:49: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [Drivers/STM32F1xx_HAL_Driver/Src/subdir.mk:49: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o] Error 1
+make: *** [Drivers/STM32F1xx_HAL_Driver/Src/subdir.mk:49: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o] Error 1
+make: *** [Drivers/STM32F1xx_HAL_Driver/Src/subdir.mk:49: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o] Error 1
+In file included from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c:36:
+../Core/Inc/stm32f1xx_hal_conf.h:302:10: fatal error: stm32f1xx_hal_i2c.h: No such file or directory
+  302 | #include "stm32f1xx_hal_i2c.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~
+In file included from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c:23:
+../Core/Inc/stm32f1xx_hal_conf.h:302:10: fatal error: stm32f1xx_hal_i2c.h: No such file or directory
+  302 | #include "stm32f1xx_hal_i2c.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+compilation terminated.
+make: *** [Drivers/STM32F1xx_HAL_Driver/Src/subdir.mk:49: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o] Error 1
+make: *** [Drivers/STM32F1xx_HAL_Driver/Src/subdir.mk:49: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o] Error 1
+make: *** [Core/drivers/LED/subdir.mk:19: Core/drivers/LED/led.o] Error 1
+make: *** [Drivers/STM32F1xx_HAL_Driver/Src/subdir.mk:49: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o] Error 1
+../Core/drivers/MPU/inv_mpu_dmp_motion_driver.c: In function 'dmp_read_fifo':
+../Core/drivers/MPU/inv_mpu_dmp_motion_driver.c:42:21: warning: implicit declaration of function 'mget_ms'; did you mean 'get_ms'? [-Wimplicit-function-declaration]
+   42 | #define get_ms      mget_ms
+      |                     ^~~~~~~
+../Core/drivers/MPU/inv_mpu_dmp_motion_driver.c:1345:5: note: in expansion of macro 'get_ms'
+ 1345 |     get_ms(timestamp);
+      |     ^~~~~~
+In file included from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/drivers/OLED/oled.h:4,
+                 from ../Core/drivers/OLED/oled.c:1:
+../Core/Inc/stm32f1xx_hal_conf.h:302:10: fatal error: stm32f1xx_hal_i2c.h: No such file or directory
+  302 | #include "stm32f1xx_hal_i2c.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Drivers/STM32F1xx_HAL_Driver/Src/subdir.mk:49: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o] Error 1
+make: *** [Drivers/STM32F1xx_HAL_Driver/Src/subdir.mk:49: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o] Error 1
+In file included from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c:26:
+../Core/Inc/stm32f1xx_hal_conf.h:302:10: fatal error: stm32f1xx_hal_i2c.h: No such file or directory
+  302 | #include "stm32f1xx_hal_i2c.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c:84:
+../Core/Inc/stm32f1xx_hal_conf.h:302:10: fatal error: stm32f1xx_hal_i2c.h: No such file or directory
+  302 | #include "stm32f1xx_hal_i2c.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Core/drivers/OLED/subdir.mk:19: Core/drivers/OLED/oled.o] Error 1
+make: *** [Drivers/STM32F1xx_HAL_Driver/Src/subdir.mk:49: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o] Error 1
+make: *** [Drivers/STM32F1xx_HAL_Driver/Src/subdir.mk:49: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o] Error 1
+In file included from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/drivers/MPU/mpu6050.h:8,
+                 from ../Core/drivers/MPU/mpu6050.c:1:
+../Core/Inc/stm32f1xx_hal_conf.h:302:10: fatal error: stm32f1xx_hal_i2c.h: No such file or directory
+  302 | #include "stm32f1xx_hal_i2c.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Core/drivers/MPU/subdir.mk:25: Core/drivers/MPU/mpu6050.o] Error 1
+In file included from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/drivers/MPU/mpu6050.h:8,
+                 from ../Core/drivers/MPU/inv_mpu.c:27:
+../Core/Inc/stm32f1xx_hal_conf.h:302:10: fatal error: stm32f1xx_hal_i2c.h: No such file or directory
+  302 | #include "stm32f1xx_hal_i2c.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Core/drivers/MPU/subdir.mk:25: Core/drivers/MPU/inv_mpu.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+
+16:59:51 Build Failed. 31 errors, 1 warnings. (took 296ms)
+

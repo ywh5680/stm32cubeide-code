@@ -1,0 +1,4 @@
+../Core/BSP/M/motor.c:19:6:Motor_Init	8	static
+../Core/BSP/M/motor.c:38:6:Motor_A_SetSpeed	16	static
+../Core/BSP/M/motor.c:62:6:Motor_B_SetSpeed	16	static
+../Core/BSP/M/motor.c:87:6:Car_Move	16	static

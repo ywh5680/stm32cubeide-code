@@ -1,0 +1,4 @@
+../Core/BSP/GRAY/gray.c:8:6:GRAY_Init	1
+../Core/BSP/GRAY/gray.c:37:9:GRAY_Read	9
+../Core/BSP/GRAY/gray.c:79:6:GRAY_ReadAll	1
+../Core/BSP/GRAY/gray.c:97:9:GRAY_ReadByte	1
