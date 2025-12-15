@@ -1,0 +1,38 @@
+{
+    "configurations": [
+        {
+            "name": "STM32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/Core/Inc",
+                "${workspaceFolder}/Core/Src",
+                "${workspaceFolder}/Core/BSP/GRAY",
+                "${workspaceFolder}/Core/BSP/M",
+                "${workspaceFolder}/Core/BSP/KEY",
+                "${workspaceFolder}/Core/BSP/LED",
+                "${workspaceFolder}/Core/BSP/MPU6050",
+                "${workspaceFolder}/Core/BSP/OLED",
+                "${workspaceFolder}/Core/app/panel",
+                "${workspaceFolder}/Core/app/run",
+                "${workspaceFolder}/Core/app/pid",
+                "${workspaceFolder}/Drivers/STM32F1xx_HAL_Driver/Inc",
+                "${workspaceFolder}/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy",
+                "${workspaceFolder}/Drivers/CMSIS/Device/ST/STM32F1xx/Include",
+                "${workspaceFolder}/Drivers/CMSIS/Include"
+            ],
+            "defines": [
+                "USE_HAL_DRIVER",
+                "STM32F103xB"
+            ],
+            "compilerPath": "/usr/bin/arm-none-eabi-gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "gcc-arm",
+            "compilerArgs": [
+                "-mcpu=cortex-m3",
+                "-mthumb"
+            ]
+        }
+    ],
+    "version": 4
+}

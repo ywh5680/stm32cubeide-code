@@ -28,9 +28,12 @@ Core/BSP/LED \
 Core/BSP/M \
 Core/BSP/MPU6050 \
 Core/BSP/OLED \
+Core/BSP/UART \
 Core/Src \
 Core/Startup \
-Core/app/panel \
+Core/app/hrun \
 Core/app/run \
+Core/app/set_parameter \
+Core/app/timer \
 Drivers/STM32F1xx_HAL_Driver/Src \
 

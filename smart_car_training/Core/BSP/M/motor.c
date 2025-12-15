@@ -1,4 +1,5 @@
 #include "motor.h"
+#include <stdlib.h>  // for abs()
 
 // PWM定时器句柄（外部定义）
 extern TIM_HandleTypeDef htim3;
@@ -40,14 +41,18 @@ void Motor_A_SetSpeed(int16_t speed)
     if (speed > 1000) speed = 1000;
     if (speed < -1000) speed = -1000;
     
+    // 将0-1000映射到0-65535 (TIM3的ARR值)
+    uint16_t pwm_value = (uint16_t)((abs(speed) * 65535) / 1000);
+    
+    // 反转方向：原来前进变后退，后退变前进
     if (speed > 0) {
-        // 前进方向: AIN1=PWM, AIN2=0
-        __HAL_TIM_SET_COMPARE(&htim3, MOTOR_A_PWM1_CHANNEL, speed);  // AIN1输出PWM
-        __HAL_TIM_SET_COMPARE(&htim3, MOTOR_A_PWM2_CHANNEL, 0);      // AIN2输出0（接地）
+        // 前进方向: AIN1=0, AIN2=PWM (反转)
+        __HAL_TIM_SET_COMPARE(&htim3, MOTOR_A_PWM1_CHANNEL, 0);          // AIN1输出0（接地）
+        __HAL_TIM_SET_COMPARE(&htim3, MOTOR_A_PWM2_CHANNEL, pwm_value);  // AIN2输出PWM
     } else if (speed < 0) {
-        // 后退方向: AIN1=0, AIN2=PWM  
-        __HAL_TIM_SET_COMPARE(&htim3, MOTOR_A_PWM1_CHANNEL, 0);      // AIN1输出0（接地）
-        __HAL_TIM_SET_COMPARE(&htim3, MOTOR_A_PWM2_CHANNEL, -speed); // AIN2输出PWM
+        // 后退方向: AIN1=PWM, AIN2=0 (反转)
+        __HAL_TIM_SET_COMPARE(&htim3, MOTOR_A_PWM1_CHANNEL, pwm_value);  // AIN1输出PWM
+        __HAL_TIM_SET_COMPARE(&htim3, MOTOR_A_PWM2_CHANNEL, 0);          // AIN2输出0（接地）
     } else {
         // 停止: AIN1=0, AIN2=0
         __HAL_TIM_SET_COMPARE(&htim3, MOTOR_A_PWM1_CHANNEL, 0);      // AIN1=0
@@ -64,14 +69,18 @@ void Motor_B_SetSpeed(int16_t speed)
     if (speed > 1000) speed = 1000;
     if (speed < -1000) speed = -1000;
     
+    // 将0-1000映射到0-65535 (TIM3的ARR值)
+    uint16_t pwm_value = (uint16_t)((abs(speed) * 65535) / 1000);
+    
+    // 反转方向：原来前进变后退，后退变前进
     if (speed > 0) {
-        // 前进方向: BIN1=PWM, BIN2=0
-        __HAL_TIM_SET_COMPARE(&htim3, MOTOR_B_PWM1_CHANNEL, speed);  // BIN1输出PWM
-        __HAL_TIM_SET_COMPARE(&htim3, MOTOR_B_PWM2_CHANNEL, 0);      // BIN2输出0（接地）
+        // 前进方向: BIN1=0, BIN2=PWM (反转)
+        __HAL_TIM_SET_COMPARE(&htim3, MOTOR_B_PWM1_CHANNEL, 0);          // BIN1输出0（接地）
+        __HAL_TIM_SET_COMPARE(&htim3, MOTOR_B_PWM2_CHANNEL, pwm_value);  // BIN2输出PWM
     } else if (speed < 0) {
-        // 后退方向: BIN1=0, BIN2=PWM
-        __HAL_TIM_SET_COMPARE(&htim3, MOTOR_B_PWM1_CHANNEL, 0);      // BIN1输出0（接地）
-        __HAL_TIM_SET_COMPARE(&htim3, MOTOR_B_PWM2_CHANNEL, -speed); // BIN2输出PWM
+        // 后退方向: BIN1=PWM, BIN2=0 (反转)
+        __HAL_TIM_SET_COMPARE(&htim3, MOTOR_B_PWM1_CHANNEL, pwm_value);  // BIN1输出PWM
+        __HAL_TIM_SET_COMPARE(&htim3, MOTOR_B_PWM2_CHANNEL, 0);          // BIN2输出0（接地）
     } else {
         // 停止: BIN1=0, BIN2=0
         __HAL_TIM_SET_COMPARE(&htim3, MOTOR_B_PWM1_CHANNEL, 0);      // BIN1=0

@@ -1,0 +1,65 @@
+#include "run.h"
+#include "pid.h"
+
+static int16_t run_base_speed = 400;
+static Incremental_PID_TypeDef line_follow_pid; // Declare PID structure
+static float accumulated_turn_output = 0.0f; // Accumulator for incremental PID output
+
+static int16_t run_clamp_speed(int16_t speed)
+{
+    if (speed > 1000)
+    {
+        speed = 1000;
+    }
+    else if (speed < -1000)
+    {
+        speed = -1000;
+    }
+    return speed;
+}
+
+void Run_Init(void)
+{
+    Car_Move(0, 0);
+    Incremental_PID_Init(&line_follow_pid, 0.0f, 80.0f, 0.0f, 50.0f);
+    accumulated_turn_output = 0.0f; 
+}
+
+void Run_SetBaseSpeed(int16_t speed)
+{
+    run_base_speed = speed;
+}
+
+void Run_LineFollowStep(void)
+{
+    uint8_t sensors = GRAY_ReadByte();
+    static const int8_t weights[8] = {-4, -3, -2, -1, 1, 2, 3, 4};
+    int16_t sum = 0;
+    int16_t count = 0;
+
+    for (int i = 0; i < 8; i++)
+    {
+        if (((sensors >> i) & 0x01U) == 0U)
+        {
+            sum += weights[i];
+            count++;
+        }
+    }
+
+    float error = 0.0f; 
+    if (count > 0)
+    {
+        error = (float)sum / (float)count;
+    }
+
+    float control_delta = Incremental_PID_Calc(&line_follow_pid, error);
+    accumulated_turn_output += control_delta;
+
+    int16_t turn = (int16_t)accumulated_turn_output;
+
+    int16_t left_speed = run_clamp_speed(run_base_speed - turn);
+    int16_t right_speed = run_clamp_speed(run_base_speed + turn);
+
+    Car_Move(left_speed, right_speed);
+}
+

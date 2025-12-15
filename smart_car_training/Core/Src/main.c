@@ -18,18 +18,16 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "motor.h"
-#include "MPU6050.h"
-#include "led.h"
-#include "OLED.h"
-#include "gray.h"
-#include "run.h"
-#include "key.h"
-#include <stdio.h>
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
-#include "panel.h"
+#include "usart.h"
+#include "OLED.h"
+#include "hrun.h"
+#include "key.h"
+#include "set.h"
+#include <stdio.h>
+#include <string.h>
 
 /* USER CODE END Includes */
 
@@ -51,9 +49,9 @@
 /* Private variables ---------------------------------------------------------*/
 TIM_HandleTypeDef htim3;
 
-/* USER CODE BEGIN PV */
+UART_HandleTypeDef huart1;
 
-PanelConfig g_panel_config;
+/* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
 
@@ -61,6 +59,7 @@ PanelConfig g_panel_config;
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_TIM3_Init(void);
+static void MX_USART1_UART_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -100,42 +99,88 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_TIM3_Init();
-  Motor_Init();
-  OLED_Init();
-  LED_Init();
-  GRAY_Init();      
-  MPU6050_Init();
-  KEY_Init();   
+  MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
  
-  g_panel_config.base_speed = 400;
-  g_panel_config.line_color = PANEL_LINE_COLOR_BLACK;
-  g_panel_config.current_state = PANEL_STATE_STANDBY;
-  Panel_Init(&g_panel_config);
-
-  Run_Init();
+  // 初始化OLED显示
+  OLED_Init();
+  OLED_Clear();
+  OLED_ShowString(1, 1, "High Speed Run");
+  OLED_ShowString(2, 1, "Initializing...");
+  HAL_Delay(500);
+  
+  // 初始化UART接收
+  usart_init(&huart1);
+  
+  // 初始化按键
+  KEY_Init();
+  
+  // 初始化高速寻迹系统
+  HRun_Init();
+  
+  // 发送启动消息
+  usart_send_string("\r\n=== High Speed Line Tracking ===\r\n");
+  usart_send_string("K1: Start/Stop\r\n");
+  usart_send_string("Type HELP for commands\r\n\r\n");
+  
+  OLED_Clear();
+  OLED_ShowString(1, 1, "key1 to run");
+  HAL_Delay(500);
 
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  
+  uint8_t hrun_started = 0;  
   while (1)
   {
-    Panel_Task(&g_panel_config);
-
-    if (g_panel_config.current_state == PANEL_STATE_LINE_FOLLOW)
-    {
-      Run_SetBaseSpeed(g_panel_config.base_speed);
-      Run_LineFollowStep();   // 执行一帧巡线控制
-    }
-    else
-    {
-      Car_Move(0, 0);
-    }
-
-    HAL_Delay(10);          // 10ms 周期，可根据实际情况调整
+    /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+    
+    // 检查K1按键启动/停止
+    if (KEY1_Read() == KEY_PRESSED) {
+        HAL_Delay(20);  // 消抖
+        if (KEY1_Read() == KEY_PRESSED) {
+            while(KEY1_Read() == KEY_PRESSED);  // 等待释放
+            
+            hrun_started = !hrun_started;
+            
+            if (hrun_started) {
+                usart_send_string("STARTED\r\n");
+                OLED_ShowString(3, 1, "Status: RUN   ");
+            } else {
+                Car_Move(0, 0);
+                usart_send_string("STOPPED\r\n");
+                OLED_ShowString(3, 1, "Status: STOP  ");
+            }
+            HAL_Delay(200);
+        }
+    }
+    
+    // 高速寻迹主循环
+    if (hrun_started) {
+        HRun_LineFollowStep();
+    }
+    
+    // 处理串口调参命令
+    if (usart_rx_complete()) {
+        char cmd[USART_REC_LEN];
+        uint16_t len = usart_get_rx_length();
+        
+        if (len > 0 && len < USART_REC_LEN) {
+            memcpy(cmd, (char*)USART_RX_BUF, len);
+            cmd[len] = '\0';
+            
+            // 处理调参命令
+            Set_ProcessCommand(cmd);
+        }
+        
+        usart_clear_rx_buffer();
+    }
+    
+    HAL_Delay(1);  // 1ms延迟
   }
   /* USER CODE END 3 */
 }
@@ -198,11 +243,11 @@ static void MX_TIM3_Init(void)
 
   /* USER CODE END TIM3_Init 1 */
   htim3.Instance = TIM3;
-  htim3.Init.Prescaler = 71;                              // 72MHz/72 = 1MHz
+  htim3.Init.Prescaler = 0;
   htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim3.Init.Period = 999;                                // 1MHz/1000 = 1kHz PWM
+  htim3.Init.Period = 65535;
   htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
-  htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
+  htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_PWM_Init(&htim3) != HAL_OK)
   {
     Error_Handler();
@@ -237,6 +282,39 @@ static void MX_TIM3_Init(void)
 
   /* USER CODE END TIM3_Init 2 */
   HAL_TIM_MspPostInit(&htim3);
+
+}
+
+/**
+  * @brief USART1 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_USART1_UART_Init(void)
+{
+
+  /* USER CODE BEGIN USART1_Init 0 */
+
+  /* USER CODE END USART1_Init 0 */
+
+  /* USER CODE BEGIN USART1_Init 1 */
+
+  /* USER CODE END USART1_Init 1 */
+  huart1.Instance = USART1;
+  huart1.Init.BaudRate = 9600;
+  huart1.Init.WordLength = UART_WORDLENGTH_8B;
+  huart1.Init.StopBits = UART_STOPBITS_1;
+  huart1.Init.Parity = UART_PARITY_NONE;
+  huart1.Init.Mode = UART_MODE_TX_RX;
+  huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart1.Init.OverSampling = UART_OVERSAMPLING_16;
+  if (HAL_UART_Init(&huart1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN USART1_Init 2 */
+
+  /* USER CODE END USART1_Init 2 */
 
 }
 

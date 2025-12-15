@@ -23,6 +23,7 @@ Core/app/run/run.o: ../Core/app/run/run.c ../Core/app/run/run.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
  /home/h/STM32CubeIDE/workspace_1.19.0/smart_car_training/Core/BSP/M/motor.h \
  /home/h/STM32CubeIDE/workspace_1.19.0/smart_car_training/Core/BSP/GRAY/gray.h
 ../Core/app/run/run.h:
@@ -51,5 +52,6 @@ Core/app/run/run.o: ../Core/app/run/run.c ../Core/app/run/run.h \
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
 /home/h/STM32CubeIDE/workspace_1.19.0/smart_car_training/Core/BSP/M/motor.h:
 /home/h/STM32CubeIDE/workspace_1.19.0/smart_car_training/Core/BSP/GRAY/gray.h:

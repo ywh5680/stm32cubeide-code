@@ -1,0 +1,7 @@
+../Core/BSP/UART/uart.c:13:6:UART_Init	1
+../Core/BSP/UART/uart.c:30:6:UART_SendString	1
+../Core/BSP/UART/uart.c:42:6:UART_SendData	1
+../Core/BSP/UART/uart.c:51:9:UART_ReceiveComplete	1
+../Core/BSP/UART/uart.c:62:6:UART_GetReceivedData	2
+../Core/BSP/UART/uart.c:78:6:UART_ClearRxBuffer	1
+../Core/BSP/UART/uart.c:90:6:UART_RxCallback	6

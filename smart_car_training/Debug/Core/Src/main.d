@@ -23,14 +23,15 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
- /home/h/STM32CubeIDE/workspace_1.19.0/smart_car_training/Core/BSP/M/motor.h \
- /home/h/STM32CubeIDE/workspace_1.19.0/smart_car_training/Core/BSP/MPU6050/MPU6050.h \
- /home/h/STM32CubeIDE/workspace_1.19.0/smart_car_training/Core/BSP/LED/led.h \
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
+ /home/h/STM32CubeIDE/workspace_1.19.0/smart_car_training/Core/BSP/UART/usart.h \
  /home/h/STM32CubeIDE/workspace_1.19.0/smart_car_training/Core/BSP/OLED/OLED.h \
+ /home/h/STM32CubeIDE/workspace_1.19.0/smart_car_training/Core/app/hrun/hrun.h \
+ /home/h/STM32CubeIDE/workspace_1.19.0/smart_car_training/Core/BSP/M/motor.h \
  /home/h/STM32CubeIDE/workspace_1.19.0/smart_car_training/Core/BSP/GRAY/gray.h \
- /home/h/STM32CubeIDE/workspace_1.19.0/smart_car_training/Core/app/run/run.h \
+ /home/h/STM32CubeIDE/workspace_1.19.0/smart_car_training/Core/BSP/MPU6050/MPU6050.h \
  /home/h/STM32CubeIDE/workspace_1.19.0/smart_car_training/Core/BSP/KEY/key.h \
- /home/h/STM32CubeIDE/workspace_1.19.0/smart_car_training/Core/app/panel/panel.h
+ /home/h/STM32CubeIDE/workspace_1.19.0/smart_car_training/Core/app/set_parameter/set.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 ../Core/Inc/stm32f1xx_hal_conf.h:
@@ -56,11 +57,12 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h:
-/home/h/STM32CubeIDE/workspace_1.19.0/smart_car_training/Core/BSP/M/motor.h:
-/home/h/STM32CubeIDE/workspace_1.19.0/smart_car_training/Core/BSP/MPU6050/MPU6050.h:
-/home/h/STM32CubeIDE/workspace_1.19.0/smart_car_training/Core/BSP/LED/led.h:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
+/home/h/STM32CubeIDE/workspace_1.19.0/smart_car_training/Core/BSP/UART/usart.h:
 /home/h/STM32CubeIDE/workspace_1.19.0/smart_car_training/Core/BSP/OLED/OLED.h:
+/home/h/STM32CubeIDE/workspace_1.19.0/smart_car_training/Core/app/hrun/hrun.h:
+/home/h/STM32CubeIDE/workspace_1.19.0/smart_car_training/Core/BSP/M/motor.h:
 /home/h/STM32CubeIDE/workspace_1.19.0/smart_car_training/Core/BSP/GRAY/gray.h:
-/home/h/STM32CubeIDE/workspace_1.19.0/smart_car_training/Core/app/run/run.h:
+/home/h/STM32CubeIDE/workspace_1.19.0/smart_car_training/Core/BSP/MPU6050/MPU6050.h:
 /home/h/STM32CubeIDE/workspace_1.19.0/smart_car_training/Core/BSP/KEY/key.h:
-/home/h/STM32CubeIDE/workspace_1.19.0/smart_car_training/Core/app/panel/panel.h:
+/home/h/STM32CubeIDE/workspace_1.19.0/smart_car_training/Core/app/set_parameter/set.h:

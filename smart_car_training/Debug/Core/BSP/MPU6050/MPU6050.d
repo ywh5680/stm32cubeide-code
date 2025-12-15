@@ -23,6 +23,7 @@ Core/BSP/MPU6050/MPU6050.o: ../Core/BSP/MPU6050/MPU6050.c \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
  ../Core/BSP/MPU6050/SoftIIC.h ../Core/BSP/MPU6050/MPU6050.h \
  ../Core/BSP/MPU6050/MPU6050_Reg.h
 ../Core/Inc/main.h:
@@ -50,6 +51,7 @@ Core/BSP/MPU6050/MPU6050.o: ../Core/BSP/MPU6050/MPU6050.c \
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
 ../Core/BSP/MPU6050/SoftIIC.h:
 ../Core/BSP/MPU6050/MPU6050.h:
 ../Core/BSP/MPU6050/MPU6050_Reg.h:
