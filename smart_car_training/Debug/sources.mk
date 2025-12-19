@@ -29,6 +29,7 @@ Core/BSP/M \
 Core/BSP/MPU6050 \
 Core/BSP/OLED \
 Core/BSP/UART \
+Core/BSP/float \
 Core/Src \
 Core/Startup \
 Core/app/hrun \

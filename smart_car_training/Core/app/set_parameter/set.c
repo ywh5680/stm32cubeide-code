@@ -1,6 +1,7 @@
 #include "set.h"
 #include "hrun.h"
 #include "usart.h"
+#include "float.h"
 #include <stdio.h>
 #include <string.h>
 
@@ -11,53 +12,7 @@ extern float hrun_kg;
 extern int16_t hrun_base_speed;
 extern int16_t hrun_weight_multiplier;
 
-/**
- * @brief 手动解析浮点数字符串
- * @param str 字符串
- * @return 浮点数值
- */
-static float parse_float(const char* str)
-{
-    float result = 0.0f;
-    float fraction = 0.0f;
-    int divisor = 1;
-    int sign = 1;
-    int in_fraction = 0;
-    
-    // 跳过前导空格
-    while (*str == ' ' || *str == '\t') {
-        str++;
-    }
-    
-    // 处理符号
-    if (*str == '-') {
-        sign = -1;
-        str++;
-    } else if (*str == '+') {
-        str++;
-    }
-    
-    // 解析数字
-    while (*str) {
-        if (*str >= '0' && *str <= '9') {
-            if (in_fraction) {
-                fraction = fraction * 10.0f + (*str - '0');
-                divisor *= 10;
-            } else {
-                result = result * 10.0f + (*str - '0');
-            }
-        } else if (*str == '.' && !in_fraction) {
-            in_fraction = 1;
-        } else if (*str == ' ' || *str == '\t' || *str == '\r' || *str == '\n') {
-            break;  // 遇到空白字符停止
-        } else {
-            break;  // 遇到其他非数字字符停止
-        }
-        str++;
-    }
-    
-    return sign * (result + fraction / divisor);
-}
+
 
 /**
  * @brief 处理串口调参命令
@@ -67,11 +22,12 @@ void Set_ProcessCommand(char* cmd)
 {
     char response[100];
     char param[10];
+    char value_str_buf[20];
     char* space_pos;
     float value;
     
-    // 调试：输出接收到的原始命令
-    sprintf(response, "DEBUG: Received cmd='%s' len=%d\r\n", cmd, (int)strlen(cmd));
+    // 调试：显示接收到的原始命令
+    sprintf(response, "RX: '%s'\r\n", cmd);
     usart_send_string(response);
     
     // 去除字符串末尾的回车换行符
@@ -96,28 +52,27 @@ void Set_ProcessCommand(char* cmd)
         while (*value_str == ' ') value_str++;
         
         // 解析数值
-        value = parse_float(value_str);
-        
-        // 调试：输出解析结果
-        sprintf(response, "DEBUG: param='%s' value_str='%s' value=%.2f\r\n", param, value_str, value);
-        usart_send_string(response);
+        value = Float_Parse(value_str);
         
         // 设置Kp
         if (strcmp(param, "KP") == 0) {
             hrun_kp = value;
-            sprintf(response, "OK: Kp=%.1f\r\n", hrun_kp);
+            Float_ToString(hrun_kp, 1, value_str_buf);
+            sprintf(response, "OK: Kp=%s\r\n", value_str_buf);
             usart_send_string(response);
         }
         // 设置Kd
         else if (strcmp(param, "KD") == 0) {
             hrun_kd = value;
-            sprintf(response, "OK: Kd=%.1f\r\n", hrun_kd);
+            Float_ToString(hrun_kd, 1, value_str_buf);
+            sprintf(response, "OK: Kd=%s\r\n", value_str_buf);
             usart_send_string(response);
         }
         // 设置Kg
         else if (strcmp(param, "KG") == 0) {
             hrun_kg = value;
-            sprintf(response, "OK: Kg=%.2f\r\n", hrun_kg);
+            Float_ToString(hrun_kg, 2, value_str_buf);
+            sprintf(response, "OK: Kg=%s\r\n", value_str_buf);
             usart_send_string(response);
         }
         // 设置速度
@@ -144,8 +99,12 @@ void Set_ProcessCommand(char* cmd)
     }
     // GET命令 - 查看所有参数
     else if (strncmp(cmd, "GET", 3) == 0) {
-        sprintf(response, "Kp:%d Kd:%d Kg:%d Spd:%d PM:%d\r\n",
-                (int)hrun_kp, (int)hrun_kd, (int)(hrun_kg * 10), hrun_base_speed, hrun_weight_multiplier);
+        char kp_str[20], kd_str[20], kg_str[20];
+        Float_ToString(hrun_kp, 1, kp_str);
+        Float_ToString(hrun_kd, 1, kd_str);
+        Float_ToString(hrun_kg, 2, kg_str);
+        sprintf(response, "Kp:%s Kd:%s Kg:%s Spd:%d PM:%d\r\n",
+                kp_str, kd_str, kg_str, hrun_base_speed, hrun_weight_multiplier);
         usart_send_string(response);
     }
     // HELP命令 - 显示帮助信息

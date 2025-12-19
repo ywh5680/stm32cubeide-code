@@ -1,2 +1,1 @@
-../Core/app/set_parameter/set.c:19:14:parse_float	13
-../Core/app/set_parameter/set.c:66:6:Set_ProcessCommand	15
+../Core/app/set_parameter/set.c:21:6:Set_ProcessCommand	15

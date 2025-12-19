@@ -29,7 +29,8 @@ Core/app/set_parameter/set.o: ../Core/app/set_parameter/set.c \
  /home/h/STM32CubeIDE/workspace_1.19.0/smart_car_training/Core/BSP/M/motor.h \
  /home/h/STM32CubeIDE/workspace_1.19.0/smart_car_training/Core/BSP/GRAY/gray.h \
  /home/h/STM32CubeIDE/workspace_1.19.0/smart_car_training/Core/BSP/MPU6050/MPU6050.h \
- /home/h/STM32CubeIDE/workspace_1.19.0/smart_car_training/Core/BSP/UART/usart.h
+ /home/h/STM32CubeIDE/workspace_1.19.0/smart_car_training/Core/BSP/UART/usart.h \
+ /home/h/STM32CubeIDE/workspace_1.19.0/smart_car_training/Core/BSP/float/float.h
 ../Core/app/set_parameter/set.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
@@ -62,3 +63,4 @@ Core/app/set_parameter/set.o: ../Core/app/set_parameter/set.c \
 /home/h/STM32CubeIDE/workspace_1.19.0/smart_car_training/Core/BSP/GRAY/gray.h:
 /home/h/STM32CubeIDE/workspace_1.19.0/smart_car_training/Core/BSP/MPU6050/MPU6050.h:
 /home/h/STM32CubeIDE/workspace_1.19.0/smart_car_training/Core/BSP/UART/usart.h:
+/home/h/STM32CubeIDE/workspace_1.19.0/smart_car_training/Core/BSP/float/float.h:

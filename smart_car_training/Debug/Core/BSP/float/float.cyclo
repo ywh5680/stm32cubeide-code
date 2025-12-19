@@ -1,0 +1,8 @@
+../Core/BSP/float/float.c:7:7:Float_Parse	13
+../Core/BSP/float/float.c:53:6:Float_ToString	6
+../Core/BSP/float/float.c:96:7:Float_FromInt	2
+../Core/BSP/float/float.c:108:9:Float_ToInt	2
+../Core/BSP/float/float.c:120:7:Float_Clamp	3
+../Core/BSP/float/float.c:130:7:Float_Map	2
+../Core/BSP/float/float.c:141:9:Float_Equal	3
+../Core/BSP/float/float.c:151:7:Float_Abs	2

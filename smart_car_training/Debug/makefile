@@ -16,6 +16,7 @@ RM := rm -rf
 -include Core/app/hrun/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
+-include Core/BSP/float/subdir.mk
 -include Core/BSP/UART/subdir.mk
 -include Core/BSP/OLED/subdir.mk
 -include Core/BSP/MPU6050/subdir.mk
