@@ -1,0 +1,10 @@
+../Core/BSP/MPU6050/SoftIIC.c:4:6:MyI2C_W_SCL	0	static
+../Core/BSP/MPU6050/SoftIIC.c:10:6:MyI2C_W_SDA	0	static
+../Core/BSP/MPU6050/SoftIIC.c:16:9:MyI2C_R_SDA	0	static
+../Core/BSP/MPU6050/SoftIIC.c:24:6:MyI2C_Init	32	static
+../Core/BSP/MPU6050/SoftIIC.c:39:6:MyI2C_Start	8	static
+../Core/BSP/MPU6050/SoftIIC.c:47:6:MyI2C_Stop	8	static
+../Core/BSP/MPU6050/SoftIIC.c:54:6:MyI2C_SendByte	16	static
+../Core/BSP/MPU6050/SoftIIC.c:65:9:MyI2C_ReceiveByte	16	static
+../Core/BSP/MPU6050/SoftIIC.c:78:6:MyI2C_SendAck	8	static
+../Core/BSP/MPU6050/SoftIIC.c:85:9:MyI2C_ReceiveAck	8	static

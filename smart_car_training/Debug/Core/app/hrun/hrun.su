@@ -1,4 +1,6 @@
-../Core/app/hrun/hrun.c:15:16:hrun_clamp_speed	16	static
-../Core/app/hrun/hrun.c:28:6:HRun_Init	8	static
-../Core/app/hrun/hrun.c:36:6:HRun_SetBaseSpeed	16	static
-../Core/app/hrun/hrun.c:41:6:HRun_LineFollowStep	56	static
+../Core/app/hrun/hrun.c:19:16:hrun_clamp_speed	16	static
+../Core/app/hrun/hrun.c:32:6:HRun_Init	8	static
+../Core/app/hrun/hrun.c:40:6:HRun_SetBaseSpeed	16	static
+../Core/app/hrun/hrun.c:45:6:HRun_ToggleLineMode	4	static
+../Core/app/hrun/hrun.c:58:13:HRun_GetLineModeName	4	static
+../Core/app/hrun/hrun.c:63:6:HRun_LineFollowStep	64	static

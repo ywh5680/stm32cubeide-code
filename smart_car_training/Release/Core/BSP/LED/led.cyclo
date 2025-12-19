@@ -1,0 +1,6 @@
+../Core/BSP/LED/led.c:8:6:LED_Init	1
+../Core/BSP/LED/led.c:39:6:LED_On	4
+../Core/BSP/LED/led.c:63:6:LED_Off	4
+../Core/BSP/LED/led.c:87:6:LED_Toggle	4
+../Core/BSP/LED/led.c:112:6:LED_Control	4
+../Core/BSP/LED/led.c:136:9:LED_GetState	3

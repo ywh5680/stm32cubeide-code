@@ -1,0 +1,6 @@
+../Core/app/timer/lap_timer.c:8:6:LapTimer_Init	0	static
+../Core/app/timer/lap_timer.c:19:6:LapTimer_Start	8	static
+../Core/app/timer/lap_timer.c:29:6:LapTimer_Stop	8	static
+../Core/app/timer/lap_timer.c:42:6:LapTimer_Reset	0	static
+../Core/app/timer/lap_timer.c:57:10:LapTimer_GetCurrentTime	8	static
+../Core/app/timer/lap_timer.c:75:9:LapTimer_IsRunning	0	static

@@ -1,9 +1,0 @@
-../Core/app/panel/panel.c:18:14:Panel_DrawStandby	8	static
-../Core/app/panel/panel.c:27:14:Panel_DrawLineFollow	8	static
-../Core/app/panel/panel.c:35:14:Panel_DrawGrayCalib	24	static
-../Core/app/panel/panel.c:53:14:Panel_DrawLineColor	8	static
-../Core/app/panel/panel.c:69:14:Panel_DrawSpeed	16	static
-../Core/app/panel/panel.c:84:14:Panel_EnterMenu	16	static
-../Core/app/panel/panel.c:108:14:Panel_ExitMenu	8	static
-../Core/app/panel/panel.c:114:7:Panel_Init	16	static
-../Core/app/panel/panel.c:137:7:Panel_Task	24	static

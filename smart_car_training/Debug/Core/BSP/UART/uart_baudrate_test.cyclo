@@ -1,3 +1,0 @@
-../Core/BSP/UART/uart_baudrate_test.c:27:6:uart_test_baudrate	2
-../Core/BSP/UART/uart_baudrate_test.c:43:10:uart_get_baudrate	2
-../Core/BSP/UART/uart_baudrate_test.c:54:13:uart_get_baudrate_name	2

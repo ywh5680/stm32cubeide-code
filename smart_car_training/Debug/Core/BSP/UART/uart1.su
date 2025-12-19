@@ -1,6 +1,0 @@
-../Core/BSP/UART/uart1.c:22:6:uart1_init	16	static
-../Core/BSP/UART/uart1.c:39:6:uart1_irq_handler	24	static
-/opt/st/stm32cubeide_1.19.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.linux64_1.0.0.202410170706/tools/arm-none-eabi/include/stdio.h:220:5:fputc	16	static
-../Core/BSP/UART/uart1.c:87:9:uart1_wait_receive	4	static
-../Core/BSP/UART/uart1.c:107:6:uart1_rx_clear	8	static
-../Core/BSP/UART/uart1.c:118:6:uart1_receive_test	8	static

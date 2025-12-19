@@ -1,0 +1,8 @@
+../Core/BSP/UART/usart.c:19:6:usart_init	1
+../Core/BSP/UART/usart.c:35:6:usart_send_string	2
+../Core/BSP/UART/usart.c:48:6:usart_send_data	2
+../Core/BSP/UART/usart.c:59:10:usart_get_rx_length	1
+../Core/BSP/UART/usart.c:68:9:usart_rx_complete	1
+../Core/BSP/UART/usart.c:77:6:usart_clear_rx_buffer	1
+../Core/BSP/UART/usart.c:89:6:HAL_UART_RxCpltCallback	7
+../Core/BSP/UART/usart.c:128:5:_write	2

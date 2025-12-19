@@ -1,4 +1,6 @@
-../Core/app/hrun/hrun.c:15:16:hrun_clamp_speed	3
-../Core/app/hrun/hrun.c:28:6:HRun_Init	1
-../Core/app/hrun/hrun.c:36:6:HRun_SetBaseSpeed	1
-../Core/app/hrun/hrun.c:41:6:HRun_LineFollowStep	4
+../Core/app/hrun/hrun.c:19:16:hrun_clamp_speed	3
+../Core/app/hrun/hrun.c:32:6:HRun_Init	1
+../Core/app/hrun/hrun.c:40:6:HRun_SetBaseSpeed	1
+../Core/app/hrun/hrun.c:45:6:HRun_ToggleLineMode	2
+../Core/app/hrun/hrun.c:58:13:HRun_GetLineModeName	2
+../Core/app/hrun/hrun.c:63:6:HRun_LineFollowStep	8

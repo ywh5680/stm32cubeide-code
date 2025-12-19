@@ -121,10 +121,12 @@ int main(void)
   // 发送启动消息
   usart_send_string("\r\n=== High Speed Line Tracking ===\r\n");
   usart_send_string("K1: Start/Stop\r\n");
+  usart_send_string("K2: Toggle BLACK/WHITE\r\n");
   usart_send_string("Type HELP for commands\r\n\r\n");
   
   OLED_Clear();
-  OLED_ShowString(1, 1, "key1 to run");
+  OLED_ShowString(1, 1, "K1:Run K2:Mode");
+  OLED_ShowString(2, 1, "Mode: BLACK");
   HAL_Delay(500);
 
   /* USER CODE END 2 */
@@ -155,6 +157,30 @@ int main(void)
                 usart_send_string("STOPPED\r\n");
                 OLED_ShowString(3, 1, "Status: STOP  ");
             }
+            HAL_Delay(200);
+        }
+    }
+    
+    // 检查K2按键切换黑白线模式
+    if (KEY2_Read() == KEY_PRESSED) {
+        HAL_Delay(20);  // 消抖
+        if (KEY2_Read() == KEY_PRESSED) {
+            while(KEY2_Read() == KEY_PRESSED);  // 等待释放
+            
+            // 切换寻迹模式
+            HRun_ToggleLineMode();
+            
+            // 更新显示和串口输出
+            const char* mode_name = HRun_GetLineModeName();
+            char oled_str[16];
+            char uart_str[32];
+            
+            sprintf(oled_str, "Mode: %-6s", mode_name);
+            sprintf(uart_str, "Line Mode: %s\r\n", mode_name);
+            
+            OLED_ShowString(2, 1, oled_str);
+            usart_send_string(uart_str);
+            
             HAL_Delay(200);
         }
     }

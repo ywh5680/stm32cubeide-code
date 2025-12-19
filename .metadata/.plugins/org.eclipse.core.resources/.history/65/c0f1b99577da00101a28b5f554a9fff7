@@ -1,0 +1,141 @@
+#include "hrun.h"
+#include "gray.h"
+#include "MPU6050.h"
+#include "motor.h"
+
+// 可调参数（外部可访问）
+int16_t hrun_base_speed = 400;
+float hrun_kp = 80.0f;
+float hrun_kd = 50.0f;
+float hrun_kg = 0.1f;
+int16_t hrun_weight_multiplier = 4;  // 权重倍数，默认4倍
+LineMode_t hrun_line_mode = LINE_MODE_BLACK;  // 默认黑线寻迹
+
+// 内部变量
+static float hrun_last_error = 0.0f;
+static float hrun_integral = 0.0f;
+static uint8_t hrun_lost_line_count = 0;
+
+static int16_t hrun_clamp_speed(int16_t speed)
+{
+    if (speed > 1000)
+    {
+        speed = 1000;
+    }
+    else if (speed < -1000)
+    {
+        speed = -1000;
+    }
+    return speed;
+}
+
+void HRun_Init(void)
+{
+    GRAY_Init();
+    MPU6050_Init();
+    Motor_Init();
+    Car_Move(0, 0);
+}
+
+void HRun_SetBaseSpeed(int16_t speed)
+{
+    hrun_base_speed = speed;
+}
+
+void HRun_ToggleLineMode(void)
+{
+    if (hrun_line_mode == LINE_MODE_BLACK) {
+        hrun_line_mode = LINE_MODE_WHITE;
+    } else {
+        hrun_line_mode = LINE_MODE_BLACK;
+    }
+    // 切换模式时重置所有状态
+    hrun_last_error = 0.0f;
+    hrun_integral = 0.0f;
+    hrun_lost_line_count = 0;
+}
+
+const char* HRun_GetLineModeName(void)
+{
+    return (hrun_line_mode == LINE_MODE_BLACK) ? "BLACK" : "WHITE";
+}
+
+void HRun_LineFollowStep(void)
+{
+    uint8_t sensors = GRAY_ReadByte();
+    // 动态权重，基于倍数参数
+    int8_t weights[8] = {
+        -4 * hrun_weight_multiplier, -3 * hrun_weight_multiplier, 
+        -2 * hrun_weight_multiplier, -1 * hrun_weight_multiplier,
+         1 * hrun_weight_multiplier,  2 * hrun_weight_multiplier,
+         3 * hrun_weight_multiplier,  4 * hrun_weight_multiplier
+    };
+    int16_t sum = 0;
+    int16_t count = 0;
+
+    for (int i = 0; i < 8; i++)
+    {
+        uint8_t sensor_value = (sensors >> i) & 0x01U;
+        
+        // 根据模式判断是否检测到线
+        uint8_t line_detected = 0;
+        if (hrun_line_mode == LINE_MODE_BLACK) {
+            line_detected = (sensor_value == 0U);  // 黑线：传感器为0表示检测到
+        } else {
+            line_detected = (sensor_value == 1U);  // 白线：传感器为1表示检测到
+        }
+        
+        if (line_detected)
+        {
+            sum += weights[i];
+            count++;
+        }
+    }
+
+    float error = 0.0f;
+    
+    if (count > 0)
+    {
+        // 检测到线，正常计算误差
+        error = (float)sum / (float)count;
+        hrun_lost_line_count = 0;  // 重置丢线计数
+    }
+    else
+    {
+        // 丢线处理：根据历史误差和陀螺仪预测
+        hrun_lost_line_count++;
+        
+        if (hrun_lost_line_count < 200)  // 短时间丢线，保持上次误差不变
+        {
+            error = hrun_last_error;
+        }
+        else
+        {
+            // 长时间丢线，误差逐渐衰减到0
+            error = hrun_last_error * 0.9f;
+        }
+    }
+
+    // PID控制计算
+    float derivative = error - hrun_last_error;
+    hrun_integral += error;
+    
+    // 积分限幅，防止积分饱和
+    if (hrun_integral > 100.0f) hrun_integral = 100.0f;
+    if (hrun_integral < -100.0f) hrun_integral = -100.0f;
+    
+    hrun_last_error = error;
+
+    // 读取陀螺仪Z轴角速度
+    float gyro_z = MPU6050_GetYawRate();
+    
+    // PID控制 + 陀螺仪阻尼（暂时I项系数设为0，保持原有特性）
+    float control = hrun_kp * error + 0.0f * hrun_integral + hrun_kd * derivative - hrun_kg * gyro_z;
+    int16_t turn = (int16_t)control;
+
+    int16_t left_speed = hrun_clamp_speed(hrun_base_speed - turn);
+    int16_t right_speed = hrun_clamp_speed(hrun_base_speed + turn);
+
+    Car_Move(left_speed, right_speed);
+}
+
